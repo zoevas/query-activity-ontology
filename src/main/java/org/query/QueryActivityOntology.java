@@ -23,9 +23,9 @@ public class QueryActivityOntology {
 	private RepositoryConnection connection;
 	private static final String NAMESPACE = "PREFIX a: <http://www.semanticweb.org/user/ontologies/2020/1/activity#> \n"; 
 
-    public QueryActivityOntology(RepositoryConnection connection) {
-        this.connection = connection;
-    }
+	public QueryActivityOntology(RepositoryConnection connection) {
+		this.connection = connection;
+	}
 
 	public void listAllActivities(RepositoryConnection connection) {
 		System.out.println("\n--------------------------------\n ");
@@ -108,13 +108,11 @@ public class QueryActivityOntology {
 			System.out.println(bindingSet.getValue("c"));	
 		}
 		result.close();
-		
-		
 	}
 	
 	public static void main(String[] args) {
 		// Abstract representation of a remote repository accessible over HTTP
-        HTTPRepository repository = new HTTPRepository("http://localhost:7200/repositories/activity");
+		HTTPRepository repository = new HTTPRepository("http://localhost:7200/repositories/activity");
 
         // Separate connection to a repository
         RepositoryConnection connection = repository.getConnection();
@@ -125,9 +123,8 @@ public class QueryActivityOntology {
 			q.listAllActivities(connection);
 			q.listAllObservations(connection);
 			q.listAllObservationswithinRange(connection);
-        } finally {
-        	connection.close();
-        }
+		} finally {
+			connection.close();
+		}
 	}
-
 }
