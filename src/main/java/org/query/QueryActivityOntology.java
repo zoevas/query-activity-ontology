@@ -114,8 +114,8 @@ public class QueryActivityOntology {
 		// Abstract representation of a remote repository accessible over HTTP
 		HTTPRepository repository = new HTTPRepository("http://localhost:7200/repositories/activity");
 
-        // Separate connection to a repository
-        RepositoryConnection connection = repository.getConnection();
+		// Separate connection to a repository
+		RepositoryConnection connection = repository.getConnection();
 		
 		QueryActivityOntology q = new QueryActivityOntology(connection);
 		
